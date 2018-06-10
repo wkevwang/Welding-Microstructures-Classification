@@ -3,7 +3,7 @@
 Research on automating analysis of microstructures in welding joints. In collaboration with [Prof. Patricio Mendez](https://sites.ualberta.ca/~ccwj/people/professors/mendez/) and his team at the [Canadian Centre for Joining and Welding](https://sites.ualberta.ca/~ccwj/).
 
 ## Background
-The goal of this project is to train a CNN to classify classes of microstructures in images of metal. The microstructures in a metal are the patterns observed under a microscope at the micrometer scale (i.e. 10-100x). The microstructure of a metal can strongly influence physical properties such as strength, toughness, ductility, hardness, corrosion resistance, high/low temperature behaviour or wear resistance of the metal. One can determine significant information about the physical properties of a metal through simply studying an image of microstructures. 
+The goal of this project is to train a CNN to identify classes of microstructures in images of metal. The microstructures in a metal are the patterns observed under a microscope at the micrometer scale (i.e. 10-100x). The microstructure of a metal can strongly influence physical properties such as strength, toughness, ductility, hardness, corrosion resistance, high/low temperature behaviour or wear resistance of the metal. One can determine significant information about the physical properties of a metal through simply studying an image of microstructures. 
 
 A microstructure image of a weld joint:
 ![microstructures](https://github.com/kevwang1/Welding-Microstructures-Classification/blob/master/Sample_Data/Segmentation_Images/Image_1.jpg)
@@ -21,7 +21,7 @@ The class FS (Ferrite and Second Phases) can be identified by parallel lines, wh
 Our initial approach at automating microstructure classification involving trying to emulate the point-counting technique; we divided each image into 50x50 pixel subimages, and trained a CNN to classify these image patches. Although this approach showed promise, the CNN could not make use of contextual information outside of the 50x50 pixel patch, losing the ability to make predictions that respect global structure. For example, it may place random points of other classes in a large region of Class 1, which is inaccurate. Therefore, we decided to move to a segmentation approach, which would make use of global structure in its predictions.
 
 #### Segmentation Approach
-Our images are laballed with [Labelbox](https://labelbox.com/). We are using a Fully Convolution Network for segmentation.
+Our images are labelled with [Labelbox](https://labelbox.com/). We are using a Fully Convolution Network for segmentation.
 
 Sample Annotations:
 - blue: PF (Primary Ferrite)
